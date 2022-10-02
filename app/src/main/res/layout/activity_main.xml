@@ -9,9 +9,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="mabbas007.myapplication.MainActivity">
+    tools:context="shazdroid.myapplication.MainActivity">
 
-    <mabbas007.tagsedittext.ShazTagsEditText
+    <shazdroid.tagsedittext.ShazTagsEditText
         android:id="@+id/tagsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

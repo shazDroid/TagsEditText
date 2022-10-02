@@ -1,4 +1,4 @@
-package mabbas007.myapplication;
+package shazdroid.myapplication;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import java.util.Arrays;
 import java.util.Collection;
 
-import mabbas007.tagsedittext.ShazTagsEditText;
+import shazdroid.tagsedittext.ShazTagsEditText;
 
 public class MainActivity extends AppCompatActivity
         implements ShazTagsEditText.TagsEditListener, View.OnClickListener {

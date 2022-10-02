@@ -1,4 +1,4 @@
-package mabbas007.myapplication;
+package shazdroid.myapplication;
 
 import org.junit.Test;
 

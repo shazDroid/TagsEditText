@@ -1,6 +1,5 @@
-package mabbas007.tagsedittext;
+package shazdroid.tagsedittext;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -39,7 +38,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import mabbas007.tagsedittext.utils.ResourceUtils;
+import shazdroid.tagsedittext.utils.ResourceUtils;
 
 
 /**
