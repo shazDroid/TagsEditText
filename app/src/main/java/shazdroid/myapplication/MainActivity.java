@@ -101,6 +101,11 @@ public class MainActivity extends AppCompatActivity
         Log.d(TAG, "onTagRemoved: " + position);
     }
 
+    @Override
+    public void onTagAdded(int position, String content) {
+        Log.d(TAG, "onTagAdded: position : " + position + ", content : " + content);
+    }
+
     private void setButtonClickListener(@IdRes int id) {
         findViewById(id).setOnClickListener(this);
     }

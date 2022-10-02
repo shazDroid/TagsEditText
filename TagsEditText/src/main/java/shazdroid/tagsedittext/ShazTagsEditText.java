@@ -498,7 +498,8 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
             setMovementMethod(LinkMovementMethod.getInstance());
             setSelection(sb.length());
             if (mListener != null && !str.equals(mLastString)) {
-                mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
+               // mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
+                mListener.onTagAdded(mTags.size() + 1,str);
             }
         }
     }
@@ -771,6 +772,8 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
 
         void onTagRemoved(int position);
 
+        void onTagAdded(int position,String content);
+
     }
 
     public static class TagsEditListenerAdapter implements TagsEditListener {
@@ -785,6 +788,10 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
 
         @Override
         public void onTagRemoved(int position) {
+        }
+
+        @Override
+        public void onTagAdded(int position, String content) {
         }
 
     }
