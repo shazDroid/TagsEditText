@@ -96,6 +96,11 @@ public class MainActivity extends AppCompatActivity
 //        //mTagsEditText.clearFocus();
     }
 
+    @Override
+    public void onTagRemoved(int position) {
+        Log.d(TAG, "onTagRemoved: " + position);
+    }
+
     private void setButtonClickListener(@IdRes int id) {
         findViewById(id).setOnClickListener(this);
     }

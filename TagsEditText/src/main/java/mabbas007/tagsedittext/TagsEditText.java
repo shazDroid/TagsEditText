@@ -577,7 +577,8 @@ public class TagsEditText extends AutoCompleteTextView {
         mTags.remove(tagIndex);
         mTagSpans.remove(tagIndex);
         if (mListener == null) return;
-        mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
+       // mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
+        mListener.onTagRemoved(tagIndex);
     }
 
     private static List<String> convertTagSpanToList(List<TagSpan> tagSpans) {
@@ -773,6 +774,8 @@ public class TagsEditText extends AutoCompleteTextView {
 
         void onEditingFinished();
 
+        void onTagRemoved(int position);
+
     }
 
     public static class TagsEditListenerAdapter implements TagsEditListener {
@@ -783,6 +786,10 @@ public class TagsEditText extends AutoCompleteTextView {
 
         @Override
         public void onEditingFinished() {
+        }
+
+        @Override
+        public void onTagRemoved(int position) {
         }
 
     }
