@@ -31,7 +31,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -48,7 +47,7 @@ import mabbas007.tagsedittext.utils.ResourceUtils;
  * Needs a lot of work
  * BETA
  */
-public class TagsEditText extends AutoCompleteTextView {
+public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCompleteTextView {
 
     public static final String NEW_LINE = "\n";
 
@@ -111,6 +110,22 @@ public class TagsEditText extends AutoCompleteTextView {
         }
     };
 
+    public ShazTagsEditText(Context context) {
+        super(context);
+        init(null, 0, 0);
+    }
+
+    public ShazTagsEditText(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(attrs, 0, 0);
+    }
+
+    public ShazTagsEditText(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(attrs, defStyleAttr, 0);
+    }
+
+
     public List<String> getTags(){
         return convertTagSpanToList(mTagSpans);
     }
@@ -119,26 +134,7 @@ public class TagsEditText extends AutoCompleteTextView {
         mSeparator = separator;
     }
 
-    public TagsEditText(Context context) {
-        super(context);
-        init(null, 0, 0);
-    }
 
-    public TagsEditText(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(attrs, 0, 0);
-    }
-
-    public TagsEditText(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(attrs, defStyleAttr, 0);
-    }
-
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public TagsEditText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init(attrs, defStyleAttr, defStyleRes);
-    }
 
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {

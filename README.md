@@ -25,7 +25,7 @@ dependencies {
 ```
 Step 3. Add TagsEditText to your layout file
 ```xml
-<mabbas007.tagsedittext.TagsEditText
+<mabbas007.tagsedittext.ShazTagEditText
         android:id="@+id/tagsEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

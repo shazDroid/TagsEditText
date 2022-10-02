@@ -10,25 +10,25 @@ import android.widget.ArrayAdapter;
 import java.util.Arrays;
 import java.util.Collection;
 
-import mabbas007.tagsedittext.TagsEditText;
+import mabbas007.tagsedittext.ShazTagsEditText;
 
 public class MainActivity extends AppCompatActivity
-        implements TagsEditText.TagsEditListener, View.OnClickListener {
+        implements ShazTagsEditText.TagsEditListener, View.OnClickListener {
 
     private static final String TAG = "MainActivity";
-    private TagsEditText mTagsEditText;
+    private ShazTagsEditText mShazTagEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mTagsEditText = (TagsEditText) findViewById(R.id.tagsEditText);
-        mTagsEditText.setHint("Enter names of fruits");
-        mTagsEditText.setTagsListener(this);
-        mTagsEditText.setTagsWithSpacesEnabled(true);
-        mTagsEditText.setAdapter(new ArrayAdapter<>(this,
+        mShazTagEditText = (ShazTagsEditText) findViewById(R.id.tagsEditText);
+        mShazTagEditText.setHint("Enter names of fruits");
+        mShazTagEditText.setTagsListener(this);
+        mShazTagEditText.setTagsWithSpacesEnabled(true);
+        mShazTagEditText.setAdapter(new ArrayAdapter<>(this,
                 android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.fruits)));
-        mTagsEditText.setThreshold(1);
+        mShazTagEditText.setThreshold(1);
 
         setButtonClickListener(R.id.btnChangeTags);
         setButtonClickListener(R.id.btnChangeBackground);
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
-            mTagsEditText.showDropDown();
+            mShazTagEditText.showDropDown();
         }
     }
 
@@ -52,31 +52,31 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId()) {
             case R.id.btnChangeTags: {
                 //mTagsEditText.setTags("1", "2", "3");
-                mTagsEditText.setTags(new String[]{"1","2","3","4"});
+                mShazTagEditText.setTags(new String[]{"1","2","3","4"});
                 break;
             }
             case R.id.btnChangeBackground: {
-                mTagsEditText.setTagsBackground(R.drawable.square);
+                mShazTagEditText.setTagsBackground(R.drawable.square);
                 break;
             }
             case R.id.btnChangeColor: {
-                mTagsEditText.setTagsTextColor(R.color.blackOlive);
+                mShazTagEditText.setTagsTextColor(R.color.blackOlive);
                 break;
             }
             case R.id.btnChangeSize: {
-                mTagsEditText.setTagsTextSize(R.dimen.larger_text_size);
+                mShazTagEditText.setTagsTextSize(R.dimen.larger_text_size);
                 break;
             }
             case R.id.btnChangeDrawableLeft: {
-                mTagsEditText.setCloseDrawableLeft(R.drawable.dot);
+                mShazTagEditText.setCloseDrawableLeft(R.drawable.dot);
                 break;
             }
             case R.id.btnChangeDrawableRight: {
-                mTagsEditText.setCloseDrawableRight(R.drawable.tag_close);
+                mShazTagEditText.setCloseDrawableRight(R.drawable.tag_close);
                 break;
             }
             case R.id.btnChangeClosePadding: {
-                mTagsEditText.setCloseDrawablePadding(R.dimen.larger_padding);
+                mShazTagEditText.setCloseDrawablePadding(R.dimen.larger_padding);
                 break;
             }
         }
