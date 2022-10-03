@@ -463,7 +463,8 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
         mLastString = getText().toString();
         mIsAfterTextWatcherEnabled = true;
         if (isEnterClicked && mListener != null) {
-            mListener.onEditingFinished();
+            // mListener.onEditingFinished();
+            mListener.onTagAddedByEnter(mTags.size(),str, true);
         }
     }
 
@@ -499,7 +500,7 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
             setSelection(sb.length());
             if (mListener != null && !str.equals(mLastString)) {
                // mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
-                mListener.onTagAdded(mTags.size() + 1,str);
+                mListener.onTagAdded(mTags.size(),mTags.get(mTags.size() - 1).mSource);
             }
         }
     }
@@ -774,6 +775,8 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
 
         void onTagAdded(int position,String content);
 
+        void onTagAddedByEnter(int position, String content,boolean isEnterPressed);
+
     }
 
     public static class TagsEditListenerAdapter implements TagsEditListener {
@@ -792,6 +795,10 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
 
         @Override
         public void onTagAdded(int position, String content) {
+        }
+
+        @Override
+        public void onTagAddedByEnter(int position, String content, boolean isEnterPressed) {
         }
 
     }

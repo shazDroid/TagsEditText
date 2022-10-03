@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Random;
 
 import shazdroid.tagsedittext.ShazTagsEditText;
 
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId()) {
             case R.id.btnChangeTags: {
                 //mTagsEditText.setTags("1", "2", "3");
-                mShazTagEditText.setTags(new String[]{"1","2","3","4"});
+                mShazTagEditText.setText("Testing ");
                 break;
             }
             case R.id.btnChangeBackground: {
@@ -104,6 +105,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onTagAdded(int position, String content) {
         Log.d(TAG, "onTagAdded: position : " + position + ", content : " + content);
+    }
+
+    @Override
+    public void onTagAddedByEnter(int position, String content, boolean isEnterPressed) {
+        Log.d(TAG, "onTagAddedByEnter: position : " + position + ", content : " + content + " , isEnterPressed : " + isEnterPressed);
     }
 
     private void setButtonClickListener(@IdRes int id) {
