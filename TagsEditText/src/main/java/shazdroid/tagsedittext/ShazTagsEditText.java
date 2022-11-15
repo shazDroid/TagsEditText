@@ -500,7 +500,7 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
             setSelection(sb.length());
             if (mListener != null && !str.equals(mLastString)) {
                // mListener.onTagsChanged(convertTagSpanToList(mTagSpans));
-                mListener.onTagAdded(mTags.size(),mTags.get(mTags.size() - 1).mSource);
+                if (mTags.size() > 0) mListener.onTagAdded(mTags.size(),mTags.get(mTags.size() - 1).mSource);
             }
         }
     }
