@@ -408,7 +408,7 @@ public class ShazTagsEditText extends android.support.v7.widget.AppCompatAutoCom
         }
 
         setMovementMethod(LinkMovementMethod.getInstance());
-        setInputType(InputType.TYPE_CLASS_TEXT
+        setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
                 | InputType.TYPE_TEXT_FLAG_MULTI_LINE
                 | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
 
